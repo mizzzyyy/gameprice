@@ -60,7 +60,7 @@ SLIDES = [
     (
         "Архитектура",
         [
-            "Пользователь → bot.py → parser.py → API",
+            "Пользователь → main.py → parser.py → API",
             "              ↓",
             "        db.py (SQLite) ← scheduler.py",
             "",
