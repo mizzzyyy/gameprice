@@ -1,5 +1,6 @@
 import asyncio
 import logging
+import os
 import sys
 
 from aiogram import Bot, Dispatcher, F
@@ -9,6 +10,7 @@ from aiogram.fsm.state import State, StatesGroup
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.types import BufferedInputFile, CallbackQuery, MenuButtonCommands, Message
 from aiogram.client.default import DefaultBotProperties
+from dotenv import load_dotenv
 
 import currency
 import db
@@ -18,6 +20,10 @@ import parser
 import scheduler
 from config import BOT_TOKEN
 
+load_dotenv()
+
+# 2. Пытаемся взять токен из системы
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
